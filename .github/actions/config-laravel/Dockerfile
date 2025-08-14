@@ -1,4 +1,4 @@
-FROM php:7.4-cli-alpine
+FROM php:8.3-cli-alpine
 
 # Configurar o Laravel
 ADD entrypoint.sh /entrypoint.sh
