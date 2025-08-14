@@ -5,7 +5,6 @@ namespace Tests\Feature\Auth;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Sanctum\Sanctum;
 use App\Models\User;
-use Tests\Traits\AutenticadoComSanctum;
 use Tests\TestCase;
 
 class AutenticacaoApiTest extends TestCase

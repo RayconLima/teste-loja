@@ -25,6 +25,8 @@ services:
     #user: "1000:1000"
     volumes:
       - ./:/var/www/html
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     expose:
       - "9000"
     networks:
