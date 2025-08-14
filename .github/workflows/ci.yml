@@ -1,9 +1,13 @@
 name: Loja-PHP Workflow
 
 on:
-  push:
+  pull_request:
     branches:
-      - develop
+      - main
+    types:
+      - synchronize
+      - opened
+      - reopened
 
 jobs:
   build:
