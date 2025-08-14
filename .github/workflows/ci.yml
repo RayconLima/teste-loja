@@ -3,21 +3,33 @@ name: Loja-PHP Workflow
 on:
   pull_request:
     branches:
-      - develop
+      - main
+    types:
+      - synchronize
+      - opened
+      - reopened
 
 jobs:
   build:
     name: Loja Laravel Workflow
     runs-on: ubuntu-latest
     steps:
-      # Esta ação faz o check-out de seu repositório em $GITHUB_WORKSPACE, para que seu fluxo de trabalho possa acessá-lo.
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      # Instalação do Composer
-      - uses: ./.github/actions/composer
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
 
-      # Instalação do Laravel
-      - uses: ./.github/actions/config-laravel
+      - name: Install Composer dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
 
-      # Execução dos testes
-      - run: ./vendor/bin/phpunit
+      - name: Laravel config
+        run: |
+          cp .env.example .env
+          php artisan cache:clear
+          php artisan config:clear
+          php artisan key:generate
+
+      - name: Run PHPUnit tests
+        run: ./vendor/bin/phpunit

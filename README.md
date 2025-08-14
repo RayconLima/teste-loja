@@ -34,7 +34,6 @@ O teste é um CRUD de lojas com vários produtos
 ## Regra da loja
 * [x] - Ao visualizar uma loja já devemos carregar todos os produtos dessa loja;
 * [x] - O CRUD dever ser completo com todas as rotas para API: index, show, store, update, delete;
-
 ## Regras do Produto
 * [x] -  Ao criar ou atualizar um produto ele deve armazenar em um banco de dados, entrará na fila e depois gerar
 uma notificação de sucesso através de email;
@@ -42,8 +41,7 @@ uma notificação de sucesso através de email;
 * [x] - Ao retornar o campo de valor nas Apis através de um mutator criar uma máscara de
    R$ ####,##.
 
-* [x] - O CRUD dever ser completo com todas as rotas para API: index, show, store,
-   update, delete;
+* [x] - O CRUD dever ser completo com todas as rotas para API: index, show, store, update, delete;
 
 * [x] - Worflow adicionado;
 
@@ -51,19 +49,19 @@ uma notificação de sucesso através de email;
 
 - Para iniciar o projeto pela primeira vez, execute:
 ```
-    docker-compose up -d --build
+  docker-compose up -d --build
 ```
 - Após o 1º build, poderá está executando sem a flag --build
 ```
-    docker-compose up -d
+  docker-compose up -d
 ```
 - Para derrubar os container, execute:
 ```
-    docker-compose down
+  docker-compose down
 ```
 
 ## status
 
-<p><img src="https://github.com/R4YC0NLima/teste-loja/workflows/Loja-PHP%20Workflow/badge.svg"></p>
+<p><img src="https://github.com/RayconLima/teste-loja/workflows/Loja-PHP%20Workflow/badge.svg"></p>
 
 # !ok
